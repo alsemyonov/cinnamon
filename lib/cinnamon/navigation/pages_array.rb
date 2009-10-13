@@ -88,12 +88,20 @@ module Cinnamon
       end
 
       def find(how_many, conditions)
-        if how_many = :first
+        if how_many == :first
           first(conditions)
         else
           all(conditions)
         end
       end
+
+      def recursive_each(depth = 0, &block)
+        each do |page|
+          yield(page, depth)
+          page.pages.recursive_each(depth + 1, &block)
+        end
+      end
+
 
       def method_missing(method, *args)
         case method

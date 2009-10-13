@@ -1,5 +1,7 @@
 module Cinnamon
-  module Application
+  class Application
+    include Singleton
+
     attr_accessor :name, :description, :keywords, :icons,
       :breadcrumbs
 
