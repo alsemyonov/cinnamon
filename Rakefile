@@ -5,14 +5,16 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "cinnamon"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Application Navigation framework}
+    gem.description = %Q{Navigation framework for Rails applications for generating menus, sitemaps, and some head meta}
     gem.email = "rotuka@rotuka.com"
-    gem.homepage = "http://github.com/rotuka/cinnamon"
+    gem.homepage = "http://github.com/krasivotokak/cinnamon"
     gem.authors = ["Alexander Semyonov"]
     gem.add_development_dependency "thoughtbot-shoulda"
+    gem.add_dependency "activesupport"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
